@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - saiko14</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesProjects.css">
+</head>
+<body>
+    <!-- Placeholder for header -->
+    <div id="header"></div>
+    <!-- Include the myHeader.js script -->
+    <script src="myHeader.js"></script>
+    
+
+
+    <main>
+        <div class="myDiv1">
+            <p style="text-align: center;">Explore a selection of my professional and personal projects across various creative fields.</p>
+        </div>
+
+        <div style="height: 100%;">
+            <ul id="videoPlayer">
+                <li id="notes">
+                    <h3>About the project</h3>
+                </li>
+                <li id="viewport">
+                    <video id="myVideo" width=100% height=100% controls>
+                        <source id="videoSource" src="assets\projects\Videos\SalimRached2022_1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </li>
+                <li id="playlist">
+                    <h3 id="albumTitle">Some of my work</h2>
+                    <ul id="myPlaylist">
+                        <li data-src="assets\projects\Videos\SalimRached2022_1.mp4">Showreel 2022</li>
+                        <li data-src="assets\projects\Videos\IAmIntro_2.mp4">Ibtikarat Al Mamlakah</li>
+                        <li data-src="assets\projects\Videos\WhatsYourStory.mp4">What's Your Story</li>
+                        <li data-src="assets\projects\Videos\QatarTower.mp4">Qatar Tower</li>
+                    </ul>
+              
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>© 2024 Salim Rached. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get references to the video player and playlist
+        const videoPlayer = document.getElementById("myVideo");
+        const videoSource = document.getElementById("videoSource");
+        const playlist = document.getElementById("myPlaylist");
+  
+        // Add click event listener to each playlist item
+        playlist.addEventListener("click", function (e) {
+          if (e.target.tagName === "LI") {
+            // Change the video source to the clicked item's data-src
+            videoSource.src = e.target.getAttribute("data-src");
+            videoPlayer.load(); // Reload the video with the new source
+            videoPlayer.play(); // Automatically play the new video
+          }
+        });
+      </script>
+
+
+</body>
+</html>
